@@ -1,0 +1,17 @@
+doctype html
+html(lang='ja')
+  head
+    meta(charset='UTF-8')
+    title Bus Times
+  body
+    header
+      h1 Bus Times
+    main
+      p 行き先を選択してください。
+      button.dest-btn.to-osu(value='osu') 大阪産業大学
+      button.dest-btn.to-sta(value='sta') 住道駅バスターミナル
+      .bus-time
+        ul#bus-time-lists
+    footer
+      p: small © 2016 Bus Times
+    script(src='js/script.min.js')
