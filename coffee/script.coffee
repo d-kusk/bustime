@@ -18,6 +18,8 @@ while _i < len
     req.onload = () ->
       timeTables = JSON.parse( req.responseText )
 
+      filterTimeTable(timeTables, destVal)
+
       console.log busTime
 
   _i++
