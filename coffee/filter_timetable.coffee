@@ -15,3 +15,13 @@ filterTimeTable = (timeTables, dest) ->
     busTime.timeTable = timeTables.timeTableToSta
   else
     console.log 'Error: 行き先から不正に値を取得しました。'
+
+  # 現在時間を元に絞り込む
+  d = new Date()
+  hour = d.getHours()
+  minute = d.getMinutes()
+
+  busTime.hour = hour
+  busTime.times = busTime.timeTable[Number(hour)]
+
+  # console.log busTimes
