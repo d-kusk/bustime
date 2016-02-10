@@ -23,12 +23,18 @@ filterTimeTable = (timeTables, dest) ->
   hour = d.getHours()
   minute = d.getMinutes()
 
-  busTime.hour = hour
-  allTimes = busTime.timeTable[Number(hour)]
+  if (7 <= hour <= 21)
 
-  # 現在の時間帯のバスの出発時刻一覧から
-  i = 0
-  while (i < allTimes.length)
-    if (minute < allTimes[i])
-      busTime.times.push(allTimes[i])
-    i++
+    busTime.hour = hour
+    allTimes = busTime.timeTable[Number(hour)]
+
+    # 現在の時間帯のバスの出発時刻一覧から
+    i = 0
+    while (i < allTimes.length)
+      if (minute < allTimes[i])
+        busTime.times.push(allTimes[i])
+      i++
+
+  else
+    busTime.hour = 7
+    busTime.times = busTime.timeTable[7]
