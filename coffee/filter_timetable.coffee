@@ -2,7 +2,9 @@
 filterTimeTable = (timeTables, dest) ->
   window.busTime =
     dest: '',
-    timeTable: {}
+    timeTable: {},
+    hour: 0,
+    times: []
 
   # 目的地に合わせて時刻表を抜き出す
   if (dest == 'osu')
@@ -22,6 +24,11 @@ filterTimeTable = (timeTables, dest) ->
   minute = d.getMinutes()
 
   busTime.hour = hour
-  busTime.times = busTime.timeTable[Number(hour)]
+  allTimes = busTime.timeTable[Number(hour)]
 
-  # console.log busTimes
+  # 現在の時間帯のバスの出発時刻一覧から
+  i = 0
+  while (i < allTimes.length)
+    if (minute < allTimes[i])
+      busTime.times.push(allTimes[i])
+    i++
