@@ -35,6 +35,10 @@ filterTimeTable = (timeTables, dest) ->
         busTime.times.push(allTimes[i])
       i++
 
+    # 現時間帯にバスがない場合に次の時間帯の一覧を追加
+    if busTime.times.length == 0
+      busTime.hour++
+      busTime.times = busTime.timeTable[Number(hour)+1]
   else
     busTime.hour = 7
     busTime.times = busTime.timeTable[7]
