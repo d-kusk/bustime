@@ -18,27 +18,27 @@ filterTimeTable = (timeTables, dest) ->
   else
     console.log 'Error: 行き先から不正に値を取得しました。'
 
-  # 現在時間を元に絞り込む
-  d = new Date()
-  hour = d.getHours()
-  minute = d.getMinutes()
+  do ->
+    # 現在時間を元に絞り込む
+    d = new Date()
+    hour = d.getHours()
+    minute = d.getMinutes()
 
-  if (7 <= hour <= 21)
+    if (7 <= hour <= 21)
+      busTime.hour = hour
+      allTimes = busTime.timeTable[Number(hour)]
 
-    busTime.hour = hour
-    allTimes = busTime.timeTable[Number(hour)]
+      # 現在の時間帯のバスの出発時刻一覧から
+      _i = 0
+      while (_i < allTimes.length)
+        if (minute < allTimes[_i])
+          busTime.times.push(allTimes[_i])
+        _i++
 
-    # 現在の時間帯のバスの出発時刻一覧から
-    i = 0
-    while (i < allTimes.length)
-      if (minute < allTimes[i])
-        busTime.times.push(allTimes[i])
-      i++
-
-    # 現時間帯にバスがない場合に次の時間帯の一覧を追加
-    if busTime.times.length == 0
-      busTime.hour++
-      busTime.times = busTime.timeTable[Number(hour)+1]
-  else
-    busTime.hour = 7
-    busTime.times = busTime.timeTable[7]
+      # 現時間帯にバスがない場合に次の時間帯の一覧を追加
+      if busTime.times.length == 0
+        busTime.hour++
+        busTime.times = busTime.timeTable[Number(hour)+1]
+    else
+      busTime.hour = 7
+      busTime.times = busTime.timeTable[7]

@@ -20,14 +20,15 @@ while _i < len
 
       filterTimeTable(timeTables, destVal)
 
-      # 時刻表エリアのクリア
-      busTimeLists.textContent = null
-      # 時刻表の表示
-      _j = 0
-      while(_j < busTime.times.length)
-        _listTemp = document.createElement('li')
-        _listTemp.innerHTML = '<time>' + busTime.hour + ':' + busTime.times[_j] + '</time>'
-        busTimeLists.appendChild(_listTemp)
+      do ->
+        # 時刻表エリアのクリア
+        busTimeLists.textContent = null
+        # 時刻表の表示
+        _i = 0
+        while(_i < busTime.times.length)
+          _listTemp = document.createElement('li')
+          _listTemp.innerHTML = '<time>' + busTime.hour + ':' + busTime.times[_i] + '</time>'
+          busTimeLists.appendChild(_listTemp)
 
-        _j++
+          _i++
   _i++
