@@ -6,9 +6,9 @@ html(lang='ja')
     meta(name="viewport", content="width=device-width,initial-scale=1")
     link(rel="stylesheet", href="https://cdn.rawgit.com/jgthms/bulma/master/css/bulma.min.css")
   body
-    header
-      h1.title Bus Times
     .container
+      header.header
+        h1.title Bus Times
       .columns
         .column
           main
@@ -17,6 +17,6 @@ html(lang='ja')
             button.button.dest-btn.to-sta(value='sta') 住道駅バスターミナル
             .bus-time
               ul#bus-time-lists
-    footer
-      p: small © 2016 Bus Times
+      footer.footer
+        p: small © 2016 Bus Times
     script(src='js/script.min.js')
