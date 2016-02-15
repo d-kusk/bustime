@@ -6,16 +6,17 @@ html(lang='ja')
     meta(name="viewport", content="width=device-width,initial-scale=1")
     link(rel="stylesheet", href="https://cdn.rawgit.com/jgthms/bulma/master/css/bulma.min.css")
   body
-    .columns
-      .column
-        header
-          h1.title Bus Times
-        main
-          p 行き先を選択してください。
-          button.button.dest-btn.to-osu(value='osu') 大阪産業大学
-          button.button.dest-btn.to-sta(value='sta') 住道駅バスターミナル
-          .bus-time
-            ul#bus-time-lists
-        footer
-          p: small © 2016 Bus Times
+    header
+      h1.title Bus Times
+    .container
+      .columns
+        .column
+          main
+            p 行き先を選択してください。
+            button.button.dest-btn.to-osu(value='osu') 大阪産業大学
+            button.button.dest-btn.to-sta(value='sta') 住道駅バスターミナル
+            .bus-time
+              ul#bus-time-lists
+    footer
+      p: small © 2016 Bus Times
     script(src='js/script.min.js')
