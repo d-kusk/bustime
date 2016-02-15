@@ -3,23 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <title>Bus Times</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/bulma/master/css/bulma.min.css">
   </head>
   <body>
-    <header>
-      <h1>Bus Times</h1>
-    </header>
-    <main>
-      <p>行き先を選択してください。</p>
-      <button value="osu" class="dest-btn to-osu">大阪産業大学</button>
-      <button value="sta" class="dest-btn to-sta">住道駅バスターミナル</button>
-      <div class="bus-time">
-        <ul id="bus-time-lists"></ul>
+    <div class="columns">
+      <div class="column">
+        <header>
+          <h1>Bus Times</h1>
+        </header>
+        <main>
+          <p>行き先を選択してください。</p>
+          <button value="osu" class="dest-btn to-osu">大阪産業大学</button>
+          <button value="sta" class="dest-btn to-sta">住道駅バスターミナル</button>
+          <div class="bus-time">
+            <ul id="bus-time-lists"></ul>
+          </div>
+        </main>
+        <footer>
+          <p><small>© 2016 Bus Times</small></p>
+        </footer>
       </div>
-    </main>
-    <footer>
-      <p><small>© 2016 Bus Times</small></p>
-    </footer>
+    </div>
     <script src="js/script.min.js"></script>
   </body>
 </html>
