@@ -1,3 +1,10 @@
+.dest-btn {
+  margin-top: 1em;
+}
+.dest-btn .fa {
+  margin-right: .5em;
+}
+
 .time-lists {
   margin-top: 1em;
 }
