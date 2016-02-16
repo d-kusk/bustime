@@ -9,3 +9,6 @@
 .time-list:nth-of-type(2n) {
   background-color: #d2d2d2;
 }
+.time-list .time {
+  font-size: 3em;
+}
