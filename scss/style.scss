@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+$list-bg: rgb(235, 235, 235);
+
+.time-lists {
+  margin-top: 1em;
+}
+
+.time-list {
+  background-color: $list-bg;
+  padding-left: 1em;
+
+  &:nth-of-type(2n) {
+    background-color: darken($list-bg, 10%);
+  }
+}

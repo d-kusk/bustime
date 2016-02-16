@@ -27,7 +27,8 @@ while _i < len
         _i = 0
         while(_i < busTime.times.length)
           _listTemp = document.createElement('li')
-          _listTemp.innerHTML = '<time>' + busTime.hour + ':' + busTime.times[_i] + '</time>'
+          _listTemp.classList.add('time-list')
+          _listTemp.innerHTML = '<time class="time">' + busTime.hour + ':' + busTime.times[_i] + '</time>'
           busTimeLists.appendChild(_listTemp)
 
           _i++

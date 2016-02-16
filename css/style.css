@@ -1,0 +1,11 @@
+.time-lists {
+  margin-top: 1em;
+}
+
+.time-list {
+  background-color: #ebebeb;
+  padding-left: 1em;
+}
+.time-list:nth-of-type(2n) {
+  background-color: #d2d2d2;
+}
