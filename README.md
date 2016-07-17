@@ -1,6 +1,7 @@
 # osuBusTimes
 
 大学シャトルバスの出発時刻を出力するサービス。
+[BusTimes](http://d-kusk.github.io/osuBusTimes/)
 
 ## システムについて
 現在の時刻を元にその時間帯のバスの出発時刻一覧を出力する。  
